@@ -1,0 +1,23 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "CrimsonHub", HidePremium = false, IntroText = "CrimsonHub", SaveConfig = true, ConfigFolder = "CrimsonHub"})
+
+local Movement = Window:MakeTab({
+	Name = "Movement",
+	Icon = "rbxassetid://17659985420",
+	PremiumOnly = false
+})
+
+Movement:AddSlider({
+	Name = "Speed",
+	Min = 5,
+	Max = 50,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 5,
+	ValueName = "speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+OrionLib:init()
